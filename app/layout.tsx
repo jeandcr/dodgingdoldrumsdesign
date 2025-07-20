@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Albert_Sans } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const gfont = Albert_Sans({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={gfont.className}>
+      <GoogleTagManager gtmId="GTM-NJPM5CBF" />
       <body className={`antialiased`}>
         <div className="grid grid-rows-[77px_1fr_auto] justify-items-center min-h-screen">
           <header className="bg-black text-white w-full h-full flex justify-between items-center">
