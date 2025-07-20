@@ -1,103 +1,135 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Component() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="w-full">
+      {/* Hero Section */}
+      <section className="relative min-h-[600px] flex items-center justify-center md:justify-end-safe md:pr-20">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/hero.avif"
+          alt="Hans sitting at his desk working"
+          fill
+          className="object-cover"
           priority
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="relative z-10 text-center text-white max-w-2xl p-6 bg-black/60">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            Industrial and
+            <br />
+            engineering design
+          </h1>
+          <p className="text-xl md:text-2xl mb-8">
+            A Copenhagen based consultancy,
+            <br />
+            helping dodging technical doldrums.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Services Section */}
+      <section className="grid md:grid-cols-2 min-h-[410px]">
+        {/* Left Column */}
+        <div className="bg-gray-100 flex items-center justify-center p-8 md:p-16">
+          <div className="max-w-md">
+            <h2 className="text-4xl md:text-5xl text-gray-900 leading-tight">
+              Mechanical design
+              <br />
+              and dimensioning
+              <br />
+              expertise
+            </h2>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="bg-black flex items-center justify-center p-8 md:p-16">
+          <div className="max-w-md">
+            <ul className="space-y-6 text-white">
+              <li className="flex gap-2 items-start">
+                <SvgCheckMark className="w-4 h-4 fill-white self-center" />
+                <span className="text-lg">Design for Excellence (DfX)</span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <SvgCheckMark className="w-4 h-4 fill-white self-center" />
+                <span className="text-lg">Reliability ensuring</span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <SvgCheckMark className="w-4 h-4 fill-white self-center" />
+                <span className="text-lg">
+                  High quality CAD and production documentation
+                </span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <SvgCheckMark className="w-4 h-4 fill-white self-center" />
+                <span className="text-lg">3D printing design optimization</span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <SvgCheckMark className="w-4 h-4 fill-white self-center" />
+                <span className="text-lg">
+                  Powder rheology and fluid tribology expertise
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl text-gray-900 mb-8 leading-tight">
+            Why choose Dodging Doldrums Design as your
+            <br />
+            engineering consultant?
+          </h2>
+
+          <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+            <p>
+              Besides my toolbox with a degree and several years of experience,
+              I bring a detail-oriented mindset, along with strong collaboration
+              and social skills, whether your demand is a specialist contributor
+              or full project ownership and execution.
+            </p>
+
+            <p>
+              Feel free to reach out through below contact information or read
+              more about me and background in{" "}
+              <Link
+                href="/about"
+                className="text-black underline hover:no-underline"
+              >
+                About
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
+  );
+}
+
+function SvgCheckMark({ ...props }) {
+  return (
+    <svg
+      {...props}
+      preserveAspectRatio="xMidYMid meet"
+      data-bbox="20 20 160 160"
+      viewBox="20 20 160 160"
+      xmlns="http://www.w3.org/2000/svg"
+      data-type="color"
+      role="img"
+      aria-label="Checkmark"
+    >
+      <g>
+        <path
+          d="M100 20c-44.18 0-80 35.82-80 80s35.82 80 80 80 80-35.82 80-80-35.82-80-80-80zm-9.761 113.896L63.124 107.6a2.001 2.001 0 0 1-.022-2.85l9.568-9.573a2 2 0 0 1 2.791-.037l14.776 14.01a2 2 0 0 0 2.808-.055l34.829-35.699a2 2 0 0 1 2.846-.018l9.547 9.547a2 2 0 0 1 .013 2.815l-47.22 48.12a2 2 0 0 1-2.821.036z"
+          fill="inherit"
+          data-color="1"
+        ></path>
+      </g>
+    </svg>
   );
 }
