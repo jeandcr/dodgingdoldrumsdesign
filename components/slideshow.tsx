@@ -70,6 +70,7 @@ export default function Slideshow() {
             src={currentSlideData.image || "/placeholder.svg"}
             alt={currentSlideData.alt}
             fill
+            priority
             className={`transition-all rounded-lg duration-500 ${
               isPortrait ? "object-contain object-center" : "object-cover"
             }`}
