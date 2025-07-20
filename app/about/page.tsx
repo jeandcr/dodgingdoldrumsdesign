@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="w-full text-lg sm:text-md">
+    <div className="w-full sm:text-lg text-md">
       {/* about section */}
       <section className="grid md:grid-cols-2 min-h-[500px]">
         <div className="bg-white flex flex-col gap-4 justify-center p-8 md:p-16">
