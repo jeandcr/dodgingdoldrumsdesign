@@ -2,6 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import "./globals.css";
+import { Albert_Sans } from "next/font/google";
+
+const gfont = Albert_Sans({
+  subsets: ["latin"],
+  preload: true,
+  display: "swap",
+});
 
 const title =
   "Dodging Doldrums Design | Mechanical engineering consultantcy in Copenhagen";
@@ -35,14 +42,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={gfont.className}>
       <body className={`antialiased`}>
-        <div className="grid grid-rows-[77px_1fr_300px] justify-items-center min-h-screen">
+        <div className="grid grid-rows-[77px_1fr_auto] justify-items-center min-h-screen">
           <header className="bg-black text-white w-full h-full flex justify-between items-center">
-            <div className="container mx-auto flex gap-2 justify-between items-center">
+            <div className="container mx-auto flex gap-2 px-4 justify-between items-center">
               <Link href="/">
                 <Image
-                  className="mb-2 hover:invert-50 transition-all"
+                  className="mb-2 hover:invert-50 transition-all sm:max-w-[298px] max-w-[230px]"
                   src="/ddd.avif"
                   alt="Dodging Doldrum Design"
                   width={298}
@@ -64,7 +71,7 @@ export default function RootLayout({
           {children}
           <footer className="bg-black text-white w-full h-full">
             <div className="container h-full mx-auto p-6 md:p-10 flex items-center justify-between">
-              <div className="info flex flex-col gap-4">
+              <div className="info flex flex-col gap-4 sm:order-first order-last">
                 <p>
                   <b>Dodging Doldrums Design</b>
                   <br />
