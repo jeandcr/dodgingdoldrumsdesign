@@ -70,7 +70,7 @@ export default function RootLayout({
           </header>
           {children}
           <footer className="bg-black text-white w-full h-full">
-            <div className="container h-full mx-auto p-6 md:p-10 flex items-center justify-between">
+            <div className="container h-full mx-auto p-6 md:p-10 flex flex-col sm:flex-row gap-4 items-center justify-between">
               <div className="info flex flex-col gap-4 sm:order-first order-last">
                 <p>
                   <b>Dodging Doldrums Design</b>
