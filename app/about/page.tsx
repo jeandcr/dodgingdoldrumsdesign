@@ -34,7 +34,7 @@ export default function About() {
             .
           </p>
         </div>
-        <div className="relative bg-gray-50 sm:min-h-[500px]">
+        <div className="relative bg-gray-50 min-h-[500px]">
           <Image
             src="/hans.avif"
             alt="Hans sitting at his desk working"
@@ -46,7 +46,7 @@ export default function About() {
       </section>
       {/* Laura section */}
       <section className="grid md:grid-cols-2 min-h-[500px]">
-        <div className="relative bg-gray-50 sm:min-h-[500px] order-last md:order-first">
+        <div className="relative bg-gray-50 min-h-[500px] order-last md:order-first">
           <Image
             src="/laura.avif"
             alt="Hans sitting at his desk working"
